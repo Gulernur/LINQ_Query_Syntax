@@ -28,10 +28,15 @@ namespace Linq
                              select e;
 
 
-            //Sorts all employees by salary in acending order. 
+            //Sorts all employees by salary in acending order & sorts all employees by name in ascending order for employees with the same salary.
             var sortedEmployees = from e in salesEmployees
                               orderby e.Salary, e.Name
                               select e;
+            
+            //Finds all names of the employees in the “Sales” department.
+            var salesEmployeeNames = from e in employees
+                                 where e.Department == "Sales"
+                                 select e.Name;
 
         }
 
