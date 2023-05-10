@@ -21,6 +21,18 @@ namespace Linq
                 new Employee { Name = "Niels", Department = "Sales", Salary = 55000.00m },
                 new Employee { Name = "Markus", Department = "Sales", Salary = 48000.00m },
             };
+
+            //Finds all emloyees that works for the sales department. 
+            var salesEmployees = from e in employees
+                             where e.Department == "Sales"
+                             select e;
+
+
+            //Sorts all employees by salary in acending order. 
+            var sortedEmployees = from e in salesEmployees
+                              orderby e.Salary, e.Name
+                              select e;
+
         }
 
         public class Employee
